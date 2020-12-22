@@ -1,0 +1,2 @@
+C:\Users\timer\source\repos\OAiP\Debug\Labs.exe
+C:\Users\timer\source\repos\OAiP\Debug\Labs.pdb

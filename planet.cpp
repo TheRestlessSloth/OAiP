@@ -1,106 +1,56 @@
 ﻿#include "planet.h"
 
-//constructor
-planet::planet()
+//setters
+void planet::setPlanetType(string PlanetType)
 {
-	_Name = "Earth";
-	_Mass = 5.9726;
-	_Radius = 6371;
-	_OrbitRadius = 149.598;
-	_NumOfSatelites = 1;
-	calVolume();
-	averageDensity();
+	_PlanetType = PlanetType;
+}
+void planet::setORad(double OrbitRadius)
+{
+	_OrbitRadius = OrbitRadius;
+}
+void planet::setPopulation(int Population)
+{
+	_Population = Population;
+}
+void planet::setAtmosphere(bool Atmosphere)
+{
+	_Atmosphere = Atmosphere;
 }
 
-planet::planet(string name, double mass, double rad, double orad, int nos)
-{
-	this->_Name = name;
-	this->_Mass = mass;
-	this->_Radius = rad;
-	this->_OrbitRadius = orad;
-	this->_NumOfSatelites = nos;
-	calVolume();
-	averageDensity();
-}
-
-//destructor
-planet :: ~planet()
-{
-	cout << "Exterminating " << _Name << endl;
-}
-
-//set-теры
-void planet::setName()
-{
-	cout << "Enter the planet name: ";
-	cin >> _Name;
-}
-void planet::setMass()
-{
-	cout << "Enter the planet mass: ";
-	cin >> _Mass;
-}
-void planet::setRad()
-{
-	cout << "Enter the planet radius: ";
-	cin >> _Radius;
-}
-void planet::setORad()
-{
-	cout << "Enter the planet orbit radius: ";
-	cin >> _OrbitRadius;
-}
-void planet::setNOS()
-{
-	cout << "Enter the planet number of satelites: ";
-	cin >> _NumOfSatelites;
-}
-
-//get-теры
-string planet::getName()
-{
-	return _Name;
-}
-double planet::getMass()
-{
-	return _Mass;
-}
-double planet::getRad()
-{
-	return _Radius;
-}
+//getters
 double planet::getORad()
 {
 	return _OrbitRadius;
 }
-int planet::getNOS()
+string planet::getPlanetType()
 {
-	return _NumOfSatelites;
+	return _PlanetType;
+}
+int planet::getPopulation()
+{
+	return _Population;
+}
+bool planet::getAtmosphere()
+{
+	return _Atmosphere;
 }
 
-//secret functions
-void planet::calVolume()
-{
-	_Volume = 4.0 / 3.0 * PI * pow(_Radius, 3);
-}
-void planet::averageDensity()
-{
-	_AverageDensity = _Mass / _Volume;
-}
-
-//public functions
+//---------------Вывод-------------
 void planet::Print()
 {
-	cout << "Information about object in class" << endl;
+	cout << "Planet" << endl;
 	cout << "-----------------------------------------------\n";
 	cout << "Name: \t\t\t|" << getName() << "" << endl;
 	cout << "Mass: \t\t\t|" << getMass() << "e+24 kg" << endl;
 	cout << "Radius: \t\t|" << getRad() << " km" << endl;
-	cout << "Orbit radius: \t\t|" << getORad() << "e+6 km" << endl;
-	cout << "Number of satelites: \t|" << getNOS() << "" << endl;
 	cout << "-----------------------------------------------\n";
-	cout << "Planet volume: \t\t|" << _Volume << "" << endl;
-	cout << "Average density: \t|" << _AverageDensity << "" << endl;
+	cout << "Planet volume: \t\t|" << getVolume() << "" << endl;
+	cout << "Average density: \t|" << getAvDen() << "" << endl;
+	cout << "Planet type:  \t|\t|" << getPlanetType() << "" << endl;
+	cout << "Orbit Radius: \t|   " << getORad() << "" << endl;
+	cout << "Population: \t|	 " << getPopulation() << "" << endl;
+	cout << "Have atmosphere? \t|" << getAtmosphere() << "" << endl;
 	cout << "-----------------------------------------------\n";
 	cout << endl;
 }

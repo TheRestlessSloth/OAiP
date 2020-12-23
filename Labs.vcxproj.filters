@@ -21,9 +21,27 @@
     <ClCompile Include="Labs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="space_obj.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="star.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="satelite.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="planet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="space_obj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="star.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="satelite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

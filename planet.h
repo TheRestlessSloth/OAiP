@@ -1,46 +1,29 @@
 ﻿#pragma once
 
-#include <string>
-#include <iostream>
+#include "space_obj.h"
 
-#define PI 3.14159265358979328462643
-
-using namespace std;
-
-class planet
+class planet : public space_obj
 {
 public:
-	planet();
-	planet(string name, double mass, double rad, double orad, int nos);
-	~planet();
 	//---------------Имя--------------
-	string getName();
-	void setName();
-	//---------------Масса--------------
-	double getMass();
-	void setMass();
-	//---------------Радиус объекта----
-	double getRad();
-	void setRad();
+	void setPlanetType(string PlanetType);
+	string getPlanetType();
 	//---------------Радиус траектории-
+	void setORad(double OrbitRadius);
 	double getORad();
-	void setORad();
-	//---------------К-во спутников----
-	int getNOS();
-	void setNOS();
+	//---------------Популяция----
+	void setPopulation(int Population);
+	int getPopulation();
+	//---------------Наличие атмосферы---
+	void setAtmosphere(bool Atmosphere);
+	bool getAtmosphere();
 	//---------------Вывод-------------
 	void Print();
 
 private:
-	//----------------Скрытые ф-ции----
-	void calVolume();
-	void averageDensity();
 	//----------------Характеристики---
-	string _Name;
-	double _Mass;
-	double _Radius;
+	string _PlanetType;
 	double _OrbitRadius;
-	int _NumOfSatelites;
-	double _Volume;
-	double _AverageDensity;
+	int _Population;
+	bool _Atmosphere;
 };
